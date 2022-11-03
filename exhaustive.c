@@ -5,8 +5,8 @@
 #define MASK (0xFFFFFFFF >> (32-Msize +1) )
 int cost = INT_MAX;
 int callnum = 0 ;
-int path[4];
-int minpath[4];
+int path[Msize-1;
+int minpath[Msize-1];
 int costmatrix[Msize][Msize] ;
 void InitMat()
 {
