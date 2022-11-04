@@ -5,8 +5,8 @@
 #define MASK (0xFFFFFFFF >> (32-Msize +1) )
 int cost = INT_MAX;
 int callnum = 0 ;
-int path[4];
-int minpath[4];
+int path[Msize-1];
+int minpath[Msize-1];
 int costmatrix[Msize][Msize] ;
 
 void InitMat()
@@ -78,20 +78,20 @@ int main()
 
     srand(time(NULL));
     //printMat( Msize);
-    int round =5000;
+    int round =2;
     while(round--)
     {
         InitMat();
-        //printMat( Msize);
+        printMat( Msize);
         cost = INT_MAX;
         exhaustive(0, 0, 0,0) ;
-        // printf("cost = %d\n 1->",cost);
+        printf("cost = %d\n 1->",cost);
 
-        //for(int i = 0 ; i < Msize-1 ; i ++)
-        //{
-        // printf("%d->",minpath[i]+1);
-        //}
-        // printf("1\n");
+        for(int i = 0 ; i < Msize-1 ; i ++)
+        {
+            printf("%d->",minpath[i]+1);
+        }
+        printf("1\n");
     }
 
 
